@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canapea Premium</title>
+    <style>
+        body {
+            font-family: 'Cambria', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        nav {
+            background: #2E2E2E;
+            padding: 15px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+        nav ul li {
+            padding: 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px 20px;
+        }
+        nav ul li a:hover {
+            background: #555;
+            border-radius: 5px;
+            color: #f1c40f;
+        }
+        .cart-icon {
+            width: 30px;
+            height:auto;
+            margin-left: 20px;
+        }
+        .product-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px;
+        }
+        .product-image {
+            flex: 1;
+            text-align: right;
+        }
+        .product-image img {
+            width: 80%;
+            border-radius: 10px;
+        }
+        .product-details {
+            flex: 1;
+            padding: 20px;
+            text-align: left;
+        }
+        .product-details h3 {
+            font-size: 32px;
+            color: #2F4F4F;
+        }
+        .product-details p {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        .pret {
+            font-size: 24px;
+            font-weight: bold;
+            color: #116530;
+            border-radius: 8px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .cantitate {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .cantitate label {
+            font-size: 18px;
+            margin-right: 10px;
+        }
+        .cantitate input {
+            width: 50px;
+            padding: 5px;
+            font-size: 16px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .button {
+            display: inline-block;
+            padding: 12px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background: #4A3328;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="Acasa.html">Acasa</a></li>
+            <li><a href="Produse.html">Produse</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </ul>
+        <a href="cart.html">
+            <img src="https://images.emojiterra.com/google/android-10/512px/1f6d2.png" alt="Cart" class="cart-icon">
+        </a>
+    </nav>
+    <div class="product-container">
+        <div class="product-details">
+            <h3>Canapea Elegantă din Piele Naturală</h3>
+            <p>Descoperă luxul suprem cu Canapeaua Premium din Piele Naturală, o piesă de mobilier care redefinește eleganța și confortul. Creată pentru a transforma orice spațiu într-un sanctuar de relaxare, această canapea îmbină designul sofisticat, materialele premium și ergonomia avansată pentru o experiență unică.
+
+                Fabricată din piele naturală de cea mai înaltă calitate, canapeaua oferă o textură moale și plăcută la atingere, garantând o senzație de confort desăvârșit. Cadrul său robust din lemn masiv asigură durabilitate și rezistență în timp, fiind conceput să reziste utilizării zilnice fără a-și pierde forma sau frumusețea.</p>
+            <ul>
+                <li><strong>Material:</strong> Piele naturală 100% premium</li>
+                <li><strong>Structură:</strong> Lemn masiv pentru stabilitate</li>
+                <li><strong>Confort:</strong> Perne cu spumă cu memorie pentru susținere optimă</li>
+                <li><strong>Întreținere ușoară:</strong> Piele rezistentă la pete și uzură</li>
+                <li><strong>Dimensiuni:</strong> 220 cm x 90 cm x 85 cm</li>
+            </ul>
+            <div class="pret">1999 RON</div>
+            <div class="cantitate">
+                <label for="quantity">Cantitate:</label>
+                <input type="number" id="cantitate" name="cantitate" value="1" min="1">
+            </div>
+            <a href="cart.html" class="button">Adaugă în Coș</a>
+        </div>
+        <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1550581190-9c1c48d21d6c?q=80&w=2609&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Canapea Premium">
+        </div>
+    </div>
+</body>
+</html>

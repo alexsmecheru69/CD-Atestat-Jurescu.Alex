@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magazin de Mobilier</title>
+    <style>
+        body {
+            font-family: 'Cambria', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+            text-align: center;
+        }
+        nav {
+            background: #2E2E2E;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        nav ul {
+            
+            padding: 0;
+            margin: 0;
+            display:flex;
+            justify-content: center;
+            gap: 40px;
+        }
+        nav ul li {
+            padding: 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px 20px;
+        }
+        nav ul li a:hover {
+            background: #555;
+            border-radius: 5px;
+            color: #f1c40f;
+        }
+        .cart-icon {
+            width: 30px;
+            height:auto;
+            margin-left: 20px;
+        }
+        
+        .hero {
+            background-image: url('https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=2664&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+            height:1550px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #333333;
+        }
+        .hero h1 {
+            font-size: 78px;
+            margin-bottom: 20px;
+        }
+        .button {
+            display: inline-block;
+            padding: 12px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background: #5C4033;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="Acasa.html">Acasa</a></li>
+            <li><a href="Produse.html">Produse</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </ul>
+        <a href="cart.html">
+            <img src="https://images.emojiterra.com/google/android-10/512px/1f6d2.png" alt="Cart" class="cart-icon">
+        </a>
+    </nav>
+    <section class="hero">
+        <h1>Eleganță și confort în fiecare detaliu</h1>
+        <a href="Produse.html" class="button">Vezi Produsele</a>
+    </section>
+</body>
+</html>

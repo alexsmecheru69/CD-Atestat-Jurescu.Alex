@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog Produse</title>
+    <style>
+        body {
+            font-family: 'Cambria', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+            text-align: center;
+        }
+        nav {
+            background: #2E2E2E;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        nav ul {
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+        nav ul li {
+            padding: 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px 20px;
+        }
+        nav ul li a:hover {
+            background: #555;
+            border-radius: 5px;
+            color: #f1c40f;
+        }
+        .cart-icon {
+            width: 30px;
+            height: auto;
+            margin-left: 20px;
+        }
+        .page-title {
+            margin: 20px 0;
+            font-size: 48px;
+        }
+        .toate-produsele {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: left;
+            gap: 40px;
+            padding: 20px;
+        }
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            width: 565px;
+            max-width: 600px;
+            text-align: center;
+        }
+        .product-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .product-card h3 {
+            margin: 10px 0;
+            font-size: 22px;
+        }
+        .product-card p {
+            font-size: 16px;
+            color: #666;
+        }
+        .product-card .price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #27ae60;
+        }
+        .button {
+            display: inline-block;
+            padding: 12px 25px;
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background: #2F4F4F;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="Acasa.html">Acasa</a></li>
+            <li><a href="Produse.html">Produse</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </ul>
+        <a href="cart.html">
+            <img src="https://images.emojiterra.com/google/android-10/512px/1f6d2.png" alt="Cart" class="cart-icon">
+        </a>
+    </nav>
+    <h1 class="page-title">Catalog Produse</h1>
+    <div class="toate-produsele">
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1550581190-9c1c48d21d6c?q=80&w=2609&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Canapea">
+            <h3>Canapea Elegantă din Piele Naturală</h3>
+            <p>Confort și rafinament pentru un living modern.</p>
+            <span class="price">1999 RON</span>
+            <a href="canapea.html" class="button">Cumpără Acum</a>
+        </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1699831542824-5b8dc438cea1?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Birou">
+            <h3>Birou din Lemn Natural cu Design Minimalist</h3>
+            <p>Spațiu de lucru ergonomic și elegant.</p>
+            <span class="price">799 RON</span>
+            <a href="birou.html" class="button">Cumpără Acum</a>
+        </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1517705008128-361805f42e86?q=80&w=2587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Scaun">
+            <h3>Scaun Ergonomic Confort Plus</h3>
+            <p>Susținere perfectă pentru birou sau relaxare.</p>
+            <span class="price">499 RON</span>
+            <a href="scaun.html" class="button">Cumpără Acum</a>
+        </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1644057501622-dfa7dd26dbfb?q=80&w=2581&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Pat">
+            <h3>Pat Premium din Lemn cu Tăblie Tapițată</h3>
+            <p>Somn odihnitor și design sofisticat.</p>
+            <span class="price">2499 RON</span>
+            <a href="pat.html" class="button">Cumpără Acum</a>
+        </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1595514535141-0b20e6615700?q=80&w=2561&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Oglinda">
+            <h3>Oglindă de Baie Modernă cu Iluminare LED</h3>
+            <p>Stil și funcționalitate pentru baia ta.</p>
+            <span class="price">699 RON</span>
+            <a href="oglinda.html" class="button">Cumpără Acum</a>
+        </div>
+        <div class="product-card">
+            <img src="https://plus.unsplash.com/premium_photo-1661875977781-adbb21036841?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Biblioteca">
+            <h3>Bibliotecă Spațioasă cu Rafturi Deschise</h3>
+            <p>Depozitare elegantă pentru cărți și decorațiuni.</p>
+            <span class="price">1099 RON</span>
+            <a href="biblioteca.html" class="button">Cumpără Acum</a>
+        </div>
+        <div class="product-card">
+            <img src="https://plus.unsplash.com/premium_photo-1676320514025-c365ab8289b6?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Noptiera">
+            <h3>Noptieră Modernă cu Sertare</h3>
+            <p>Organizare practică într-un design elegant.</p>
+            <span class="price">399 RON</span>
+            <a href="noptiera.html" class="button">Cumpără Acum</a>
+        </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Blat">
+            <h3>Blat de Bucătărie din Quartz Ultra Rezistent</h3>
+            <p>Durabilitate și estetică premium pentru bucătărie.</p>
+            <span class="price">4399 RON</span>
+            <a href="blatbucatarie.html" class="button">Cumpără Acum</a>
+        </div>
+        <div class="product-card">
+            <img src="https://plus.unsplash.com/premium_photo-1683120912036-525c997c227d?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="TV">
+            <h3>Comodă TV Modernă cu Depozitare</h3>
+            <p>Design elegant și spațiu generos pentru organizare.</p>
+            <span class="price">999 RON</span>
+            <a href="tv.html" class="button">Cumpără Acum</a>
+        </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1615749174123-543bc62e944f?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="sezlong">
+            <h3>Șezlong de Exterior Premium</h3>
+            <p>Relaxare perfectă pentru grădină sau terasă.</p>
+            <span class="price">849 RON</span>
+            <a href="sezlong.html" class="button">Cumpără Acum</a>
+        </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1502238074616-a146498d5158?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="TV">
+            <h3>Etajeră Modernă cu Depozitare Versatilă</h3>
+            <p>Organizare inteligentă pentru pantofi și accesorii.</p>
+            <span class="price">999 RON</span>
+            <a href="tv.html" class="button">Cumpără Acum</a>
+        </div>
+    </div>
+</body>
+</html>
+

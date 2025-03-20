@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p id="doamnabj">doamnabj</p>
+    <button onclick="doamnabj()">CLICKK </button>
+    <script>
+        function doamnabj () {
+            const paragraf = document.getElementById("doamnabj");
+            paragraf.innerHTML="domnubj";
+            paragraf.classList.toggle="doamnabj";
+        }
+         const suma=(a,b) =>a+b;
+         const produs=(a,b) =>a*b;
+         const diferenta=(a,b) =>a-b;
+         const impartire=(a,b) =>a/b; 
+        
+         const general = (a,b) => {
+            console.log ("suma: ", suma(a,b));
+            console.log ("produs: ", produs(a,b));
+            console.log ("diferenta: ", diferenta(a,b));
+            console.log ("impartire: ", impartire(a,b));
+         }
+         general (10,5)
+         
+
+    </script>
+</body>
+</html>
