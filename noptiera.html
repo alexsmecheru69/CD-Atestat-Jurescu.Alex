@@ -129,18 +129,41 @@
     </nav>
     <div class="product-container">
         <div class="product-details">
-            <h3>Noptieră Modernă cu Spațiu de Depozitare</h3>
+            <h3>Noptieră Modernă cu Sertare</h3>
             <p> Completează designul dormitorului tău cu Noptiera Modernă cu Spațiu de Depozitare, o piesă de mobilier elegantă și funcțională. Concepută pentru a oferi un echilibru perfect între stil și utilitate, această noptieră este ideală pentru a-ți păstra la îndemână cărțile, telefonul sau obiectele personale. </p> <p> Cu un design compact și rafinat, noptiera este realizată din materiale rezistente și se integrează ușor în orice decor. Sertarul spațios și raftul deschis oferă soluții de depozitare inteligente, menținând dormitorul ordonat și elegant. </p> <ul> <li><strong>Material:</strong> MDF premium, rezistent și durabil</li> <li><strong>Design modern:</strong> Stil minimalist, ușor de asortat</li> <li><strong>Depozitare practică:</strong> Sertar încăpător și raft deschis</li> <li><strong>Construcție solidă:</strong> Picioare stabile pentru siguranță maximă</li> <li><strong>Întreținere ușoară:</strong> Suprafață rezistentă la pete și zgârieturi</li> <li><strong>Dimensiuni:</strong> 50 cm x 40 cm x 35 cm</li> </ul>
             <div class="pret">399 RON</div>
             <div class="cantitate">
                 <label for="quantity">Cantitate:</label>
                 <input type="number" id="cantitate" name="cantitate" value="1" min="1">
             </div>
-            <a href="cart.html" class="button">Adaugă în Coș</a>
+            <button class="button" onclick="addToCart()">Adaugă în Coș</button>
         </div>
         <div class="product-image">
             <img src="https://plus.unsplash.com/premium_photo-1676320514025-c365ab8289b6?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Pat Premium">
         </div>
     </div>
+    <script>
+        function addToCart() {
+            const quantity = parseInt(document.getElementById("cantitate").value);
+            const product = {
+                id: "noptiera1",
+                name: "Noptieră Modernă cu Sertare",
+                price: 399,
+                quantity: quantity
+            };
+
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            let existingProduct = cart.find(item => item.id === product.id);
+
+            if (existingProduct) {
+                existingProduct.quantity += quantity;
+            } else {
+                cart.push(product);
+            }
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+            alert("Produsul a fost adăugat în coș!");
+        }
+    </script>
 </body>
 </html>

@@ -129,18 +129,41 @@
     </nav>
     <div class="product-container">
         <div class="product-details">
-            <h3>Comodă TV Modernă cu Depozitare Inteligentă</h3>
+            <h3>Comodă  Modernă cu Depozitare </h3>
             <p> Completează livingul tău cu Comoda TV Modernă cu Depozitare Inteligentă, o piesă de mobilier elegantă și funcțională, perfectă pentru organizarea spațiului de relaxare. Cu un design contemporan și finisaje premium, această comodă nu doar că oferă un suport stabil pentru televizor, dar include și rafturi și sertare spațioase pentru depozitarea echipamentelor media, cărților sau decorațiunilor. </p> <p> Fabricată din materiale durabile și rezistente, comoda TV este concepută pentru a îmbina stilul cu funcționalitatea. Liniile minimaliste și culorile moderne o fac potrivită pentru orice tip de amenajare interioară, fie că ai un decor clasic, scandinav sau industrial. </p> <ul> <li><strong>Material:</strong> MDF laminat premium / Lemn masiv / PAL melaminat</li> <li><strong>Design modern:</strong> Stil elegant, potrivit pentru orice living</li> <li><strong>Depozitare practică:</strong> Sertare și rafturi pentru organizarea dispozitivelor media</li> <li><strong>Stabilitate și durabilitate:</strong> Construcție solidă pentru siguranță maximă</li> <li><strong>Gestionare cabluri:</strong> Orificii speciale pentru organizarea firelor</li> <li><strong>Dimensiuni:</strong> 140 cm x 40 cm x 50 cm (alte dimensiuni disponibile)</li> </ul>
             <div class="pret">999 RON</div>
             <div class="cantitate">
                 <label for="quantity">Cantitate:</label>
                 <input type="number" id="cantitate" name="cantitate" value="1" min="1">
             </div>
-            <a href="cart.html" class="button">Adaugă în Coș</a>
+            <button class="button" onclick="addToCart()">Adaugă în Coș</button>
         </div>
         <div class="product-image">
             <img src="https://plus.unsplash.com/premium_photo-1683133212932-7dd8bd0b2c67?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Scaun Premium">
         </div>
     </div>
+    <script>
+        function addToCart() {
+            const quantity = parseInt(document.getElementById("cantitate").value);
+            const product = {
+                id: "tv1",
+                name: "Comodă Modernă cu Depozitare ",
+                price: 999,
+                quantity: quantity
+            };
+
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            let existingProduct = cart.find(item => item.id === product.id);
+
+            if (existingProduct) {
+                existingProduct.quantity += quantity;
+            } else {
+                cart.push(product);
+            }
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+            alert("Produsul a fost adăugat în coș!");
+        }
+    </script>
 </body>
 </html>

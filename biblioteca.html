@@ -129,18 +129,50 @@
     </nav>
     <div class="product-container">
         <div class="product-details">
-            <h3>Pat Premium din Lemn Masiv</h3>
-            <p> Organizează-ți spațiul cu stil folosind Biblioteca Modernă cu Design Elegant, o piesă de mobilier care combină funcționalitatea și estetica pentru un interior sofisticat. Concepută pentru a maximiza spațiul de depozitare, această bibliotecă oferă rafturi spațioase și o structură solidă, fiind ideală pentru cărți, decoruri sau obiecte personale. </p> <p> Fabricată din materiale durabile, biblioteca are un finisaj rafinat și o construcție stabilă, potrivită pentru orice tip de amenajare interioară. Designul său modern, cu linii curate și proporții echilibrate, se integrează perfect în birouri, livinguri sau dormitoare, oferind un plus de ordine și eleganță. </p> <ul> <li><strong>Material:</strong> MDF premium, rezistent la umiditate și zgârieturi</li> <li><strong>Design modern:</strong> Linii minimaliste, potrivite pentru orice decor</li> <li><strong>Depozitare eficientă:</strong> Rafturi spațioase pentru cărți și accesorii</li> <li><strong>Construcție solidă:</strong> Stabilitate și durabilitate în timp</li> <li><strong>Întreținere ușoară:</strong> Se curăță simplu cu o lavetă umedă</li> <li><strong>Dimensiuni:</strong> 180 cm x 80 cm x 30 cm</li> </ul>
+            <h3>Bibliotecă Spațioasă cu Rafturi Deschise</h3>
+            <p>Organizează-ți spațiul cu stil folosind Biblioteca Modernă cu Design Elegant...</p>
+            <ul>
+                <li><strong>Material:</strong> MDF premium, rezistent la umiditate și zgârieturi</li>
+                <li><strong>Design modern:</strong> Linii minimaliste, potrivite pentru orice decor</li>
+                <li><strong>Depozitare eficientă:</strong> Rafturi spațioase pentru cărți și accesorii</li>
+                <li><strong>Construcție solidă:</strong> Stabilitate și durabilitate în timp</li>
+                <li><strong>Întreținere ușoară:</strong> Se curăță simplu cu o lavetă umedă</li>
+                <li><strong>Dimensiuni:</strong> 180 cm x 80 cm x 30 cm</li>
+            </ul>
             <div class="pret">1099 RON</div>
             <div class="cantitate">
-                <label for="quantity">Cantitate:</label>
+                <label for="cantitate">Cantitate:</label>
                 <input type="number" id="cantitate" name="cantitate" value="1" min="1">
             </div>
-            <a href="cart.html" class="button">Adaugă în Coș</a>
+            <button class="button" onclick="addToCart()">Adaugă în Coș</button>
         </div>
         <div class="product-image">
             <img src="https://plus.unsplash.com/premium_photo-1661875977781-adbb21036841?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Biblioteca Premium">
         </div>
     </div>
+
+    <script>
+        function addToCart() {
+            const quantity = parseInt(document.getElementById("cantitate").value);
+            const product = {
+                id: "produs1",
+                name: "Bibliotecă Spațioasă cu Rafturi Deschise",
+                price: 1099,
+                quantity: quantity
+            };
+
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            let existingProduct = cart.find(item => item.id === product.id);
+
+            if (existingProduct) {
+                existingProduct.quantity += quantity;
+            } else {
+                cart.push(product);
+            }
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+            alert("Produsul a fost adăugat în coș!");
+        }
+    </script>
 </body>
 </html>

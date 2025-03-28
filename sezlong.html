@@ -129,7 +129,7 @@
     </nav>
     <div class="product-container">
         <div class="product-details">
-            <h3>Șezlong de Exterior Confortabil și Elegant
+            <h3>Șezlong de Exterior Premium
 
             </h3>
             <p> Relaxează-te în aer liber cu Șezlongul de Exterior Confortabil și Elegant, conceput pentru a-ți oferi momente de liniște și confort absolut. Cu un design ergonomic și materiale rezistente la intemperii, acest șezlong este ideal pentru grădini, terase sau piscine, oferindu-ți un spațiu perfect pentru relaxare. </p> <p> Structura sa durabilă, realizată din lemn tratat, aluminiu sau ratan sintetic, asigură stabilitate și longevitate. Suprafața confortabilă este completată de un șezut ergonomic și o pernă moale detașabilă, pentru un plus de relaxare. </p> <ul> <li>Material: lemn masiv, aluminiu sau ratan sintetic, rezistent la intemperii</li> <li>Confort maxim: pernă moale detașabilă pentru relaxare îmbunătățită</li> <li>Design ergonomic: susținere optimă pentru spate și picioare</li> <li>Rezistență la intemperii: materiale special tratate pentru exterior</li> <li>Ușor de întreținut: huse lavabile și curățare simplă</li> <li>Dimensiuni: 180 cm x 65 cm x 35 cm</li> </ul>
@@ -138,11 +138,34 @@
                 <label for="quantity">Cantitate:</label>
                 <input type="number" id="cantitate" name="cantitate" value="1" min="1">
             </div>
-            <a href="cart.html" class="button">Adaugă în Coș</a>
+            <button class="button" onclick="addToCart()">Adaugă în Coș</button>
         </div>
         <div class="product-image">
             <img src="https://images.unsplash.com/photo-1615749174123-543bc62e944f?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Sezlong">
         </div>
     </div>
+    <script>
+        function addToCart() {
+            const quantity = parseInt(document.getElementById("cantitate").value);
+            const product = {
+                id: "sezlong1",
+                name: "Șezlong de Exterior Premium",
+                price: 849,
+                quantity: quantity
+            };
+
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            let existingProduct = cart.find(item => item.id === product.id);
+
+            if (existingProduct) {
+                existingProduct.quantity += quantity;
+            } else {
+                cart.push(product);
+            }
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+            alert("Produsul a fost adăugat în coș!");
+        }
+    </script>
 </body>
 </html>

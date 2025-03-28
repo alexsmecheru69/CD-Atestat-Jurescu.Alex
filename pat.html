@@ -129,18 +129,41 @@
     </nav>
     <div class="product-container">
         <div class="product-details">
-            <h3>Pat Premium din Lemn Masiv</h3>
+            <h3>Pat Premium din Lemn cu Tăblie Tapițată</h3>
             <p> Descoperă eleganța și confortul absolut cu Patul Premium din Lemn Masiv, o piesă de mobilier care aduce un plus de rafinament oricărui dormitor. Creat pentru a oferi durabilitate, stabilitate și un somn odihnitor, acest pat îmbină designul clasic cu materiale premium, fiind perfect pentru un ambient relaxant și modern. </p> <p> Fabricat din lemn masiv de înaltă calitate, patul oferă o construcție solidă și rezistență în timp, fără scârțâituri sau instabilitate. Cadrul robust și tăblia elegantă completează designul, oferind un suport excelent pentru saltea și un aspect sofisticat pentru dormitorul tău. </p> <ul> <li><strong>Material:</strong> Lemn masiv premium, tratat pentru durabilitate</li> <li><strong>Structură solidă:</strong> Construcție robustă, fără balans</li> <li><strong>Design elegant:</strong> Tăblie înaltă, cu finisaje rafinate</li> <li><strong>Compatibilitate:</strong> Potrivit pentru saltele de diferite grosimi</li> <li><strong>Întreținere ușoară:</strong> Tratament anti-umiditate și anti-zgârieturi</li> <li><strong>Dimensiuni:</strong> 160 cm x 200 cm (disponibil și în alte mărimi)</li> </ul>
             <div class="pret">2499 RON</div>
             <div class="cantitate">
                 <label for="quantity">Cantitate:</label>
                 <input type="number" id="cantitate" name="cantitate" value="1" min="1">
             </div>
-            <a href="cart.html" class="button">Adaugă în Coș</a>
+            <button class="button" onclick="addToCart()">Adaugă în Coș</button>
         </div>
         <div class="product-image">
             <img src="https://images.unsplash.com/photo-1644057501622-dfa7dd26dbfb?q=80&w=2581&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Pat Premium">
         </div>
     </div>
+    <script>
+        function addToCart() {
+            const quantity = parseInt(document.getElementById("cantitate").value);
+            const product = {
+                id: "pat1",
+                name: "Pat Premium din Lemn cu Tăblie Tapițată",
+                price: 2499,
+                quantity: quantity
+            };
+
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            let existingProduct = cart.find(item => item.id === product.id);
+
+            if (existingProduct) {
+                existingProduct.quantity += quantity;
+            } else {
+                cart.push(product);
+            }
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+            alert("Produsul a fost adăugat în coș!");
+        }
+    </script>
 </body>
 </html>

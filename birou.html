@@ -129,7 +129,7 @@
     </nav>
     <div class="product-container">
         <div class="product-details">
-            <h3>Birou Modern din Lemn Masiv</h3>
+            <h3>Birou din Lemn Natural cu Design Minimalist</h3>
             <p>
                 Descoperă eleganța și funcționalitatea perfectă cu Biroul Modern din Lemn Masiv, un element esențial pentru orice spațiu de lucru. 
                 Acest birou combină designul sofisticat, durabilitatea excepțională și confortul ergonomic, fiind ideal atât pentru birourile moderne, cât și pentru home office.
@@ -153,11 +153,35 @@
                 <label for="quantity">Cantitate:</label>
                 <input type="number" id="cantitate" name="cantitate" value="1" min="1">
             </div>
-            <a href="cart.html" class="button">Adaugă în Coș</a>
+            <button class="button" onclick="addToCart()">Adaugă în Coș</button>
         </div>
         <div class="product-image">
             <img src="https://images.unsplash.com/photo-1699831542824-5b8dc438cea1?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Birou Premium">
         </div>
     </div>
+    
+    <script>
+        function addToCart() {
+            const quantity = parseInt(document.getElementById("cantitate").value);
+            const product = {
+                id: "birou1",
+                name: "Birou din Lemn Natural cu Design Minimalist",
+                price: 799,
+                quantity: quantity
+            };
+
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            let existingProduct = cart.find(item => item.id === product.id);
+
+            if (existingProduct) {
+                existingProduct.quantity += quantity;
+            } else {
+                cart.push(product);
+            }
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+            alert("Produsul a fost adăugat în coș!");
+        }
+    </script>
 </body>
 </html>

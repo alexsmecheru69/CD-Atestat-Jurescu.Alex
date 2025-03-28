@@ -129,18 +129,41 @@
     </nav>
     <div class="product-container">
         <div class="product-details">
-            <h3>Oglindă de Baie cu Design Modern</h3>
+            <h3>Oglindă de Baie Modernă cu Iluminare LED</h3>
             <p> Completează eleganța băii tale cu Oglinda de Baie cu Design Modern, o combinație perfectă între stil, funcționalitate și calitate premium. Proiectată pentru a adăuga luminozitate și profunzime oricărui spațiu, această oglindă redefinește rafinamentul în amenajările interioare. </p> <p> Realizată din sticlă de înaltă calitate, tratată anti-aburire, oglinda oferă claritate perfectă și rezistență la umiditate. Rama elegantă și finisajele premium adaugă un plus de stil, integrându-se armonios în băi moderne sau clasice. </p> <ul> <li><strong>Material:</strong> Sticlă premium, cu tratament anti-aburire</li> <li><strong>Design modern:</strong> Margini subțiri pentru un aspect elegant</li> <li><strong>Rezistență:</strong> Protecție împotriva umidității și zgârieturilor</li> <li><strong>Opțiuni suplimentare:</strong> Disponibilă cu iluminare LED integrată</li> <li><strong>Montare:</strong> Instalare ușoară, verticală sau orizontală</li> <li><strong>Dimensiuni:</strong> 80 cm x 60 cm (disponibilă în diferite mărimi)</li> </ul>
             <div class="pret">699 RON</div>
             <div class="cantitate">
                 <label for="quantity">Cantitate:</label>
                 <input type="number" id="cantitate" name="cantitate" value="1" min="1">
             </div>
-            <a href="cart.html" class="button">Adaugă în Coș</a>
+            <button class="button" onclick="addToCart()">Adaugă în Coș</button>
         </div>
         <div class="product-image">
             <img src="https://images.unsplash.com/photo-1595514535141-0b20e6615700?q=80&w=2561&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Oglinda Premium">
         </div>
     </div>
+    <script>
+        function addToCart() {
+            const quantity = parseInt(document.getElementById("cantitate").value);
+            const product = {
+                id: "oglinda1",
+                name: "Oglindă de Baie Modernă cu Iluminare LED",
+                price: 699,
+                quantity: quantity
+            };
+
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            let existingProduct = cart.find(item => item.id === product.id);
+
+            if (existingProduct) {
+                existingProduct.quantity += quantity;
+            } else {
+                cart.push(product);
+            }
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+            alert("Produsul a fost adăugat în coș!");
+        }
+    </script>
 </body>
 </html>
