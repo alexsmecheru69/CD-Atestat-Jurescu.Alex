@@ -139,12 +139,12 @@
                 <li><strong>Întreținere ușoară:</strong> Se curăță simplu cu o lavetă umedă</li>
                 <li><strong>Dimensiuni:</strong> 180 cm x 80 cm x 30 cm</li>
             </ul>
-            <div class="pret">1099 RON</div>
+            <div class="pret">1099 EUR</div>
             <div class="cantitate">
                 <label for="cantitate">Cantitate:</label>
                 <input type="number" id="cantitate" name="cantitate" value="1" min="1">
             </div>
-            <button class="button" onclick="addToCart()">Adaugă în Coș</button>
+            <button class="button" onclick="addProductToCart()">Adaugă în Coș</button>
         </div>
         <div class="product-image">
             <img src="https://plus.unsplash.com/premium_photo-1661875977781-adbb21036841?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Biblioteca Premium">
@@ -152,27 +152,29 @@
     </div>
 
     <script>
-        function addToCart() {
-            const quantity = parseInt(document.getElementById("cantitate").value);
-            const product = {
-                id: "produs1",
-                name: "Bibliotecă Spațioasă cu Rafturi Deschise",
-                price: 1099,
-                quantity: quantity
-            };
-
-            let cart = JSON.parse(localStorage.getItem("cart")) || [];
-            let existingProduct = cart.find(item => item.id === product.id);
-
-            if (existingProduct) {
-                existingProduct.quantity += quantity;
-            } else {
-                cart.push(product);
-            }
-
-            localStorage.setItem("cart", JSON.stringify(cart));
-            alert("Produsul a fost adăugat în coș!");
+        function addProductToCart() {
+          var quantity = parseInt(document.getElementById("cantitate").value);
+          var product = {
+            id: "biblioteca1",
+            name: "Bibliotecă Modernă cu Design Elegant",
+            price: 1099, 
+            quantity: quantity
+          };
+      
+          var cart = JSON.parse(localStorage.getItem("cart")) || [];
+          var existingProduct = cart.find(function(item) {
+            return item.id === product.id;
+          });
+      
+          if (existingProduct) {
+            existingProduct.quantity += product.quantity;
+          } else {
+            cart.push(product);
+          }
+      
+          localStorage.setItem("cart", JSON.stringify(cart));
+          alert("Produsul a fost adăugat în coș!");
         }
-    </script>
+      </script>
 </body>
 </html>

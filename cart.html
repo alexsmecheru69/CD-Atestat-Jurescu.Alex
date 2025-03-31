@@ -92,6 +92,11 @@
             border-radius: 10px;
             text-decoration: none;
         }
+        .paypal-center {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
     </style>
 </head>
 <body>
@@ -109,49 +114,15 @@
     <div class="cart-container">
         <h1>Coșul Tău de Cumpărături</h1>
         <ul id="cart-items"></ul>
-        <p class="total-price" id="cart-total">Total: 0 RON</p>
+        <p class="total-price" id="cart-total">Total: 0 EUR</p>
         <button class="checkout-btn">Finalizare Comandă</button>
-    </div>
-
-    <script>
-        function removeFromCart(productId) {
-            let cart = JSON.parse(localStorage.getItem("cart")) || [];
-            let index = cart.findIndex(item => item.id === productId);
-            if (index !== -1) {
-                if (cart[index].quantity > 1) {
-                    cart[index].quantity--;
-                } else {
-                    cart.splice(index, 1);
-                }
-                localStorage.setItem("cart", JSON.stringify(cart));
-            }
-            renderCart();
-        }
-
-        function renderCart() {
-            let cart = JSON.parse(localStorage.getItem("cart")) || [];
-            let container = document.getElementById("cart-items");
-            let totalContainer = document.getElementById("cart-total");
-            container.innerHTML = "";
-            let total = 0;
-
-            cart.forEach(product => {
-                let li = document.createElement("li");
-                li.className = "cart-item";
-                li.innerHTML = `
-                    <h3>${product.name}</h3>
-                    <span>${product.price * product.quantity} RON</span>
-                    <span>x${product.quantity}</span>
-                    <button onclick="removeFromCart('${product.id}')">➖</button>
-                `;
-                container.appendChild(li);
-                total += product.price * product.quantity;
-            });
-
-            totalContainer.textContent = `Total: ${total} RON`;
-        }
-
-        window.onload = renderCart;
+    </div> 
+    <script src="https://www.paypal.com/sdk/js?client-id=Ae2cMMTx9QVKQfQipPkS5w81XDV0lz6IoTt4AGXHHqXgk6wJxSnpqi9azjXFEJ9HMwFIyPr2YciPyRxS&enable-funding=venmo&currency=EUR">
+        
     </script>
+<script src="cartjs.js"></script>
+<div class="paypal-center">
+    <div id="paypal-button-container"></div>
+  </div>
 </body>
 </html>
